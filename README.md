@@ -1,3 +1,4 @@
+``markdown
 # Reading Between the Reels: High-Frequency Sentiment Quantification of Unstructured Movie Reviews
 
 [![Python 3.9+](https://img.shields.io/badge/python-3.9+-blue.svg)](https://www.python.org/downloads/)
@@ -12,6 +13,7 @@
 > **Tian, H., Xie, W. (Tony), & Zhang, Y. (2026).** *"Reading Between the Reels: An AI-Driven Approach to Analysing Movie Review Sentiment and Market Returns."* International Journal of Finance & Economics.
 
 This project implements a production-grade **Asynchronous ETL (Extract, Transform, Load) Pipeline** designed to quantify investor attention distractions using unstructured textual data. By leveraging Large Language Models (GPT-4o) with strict schema validation, **I processed** over **247,000 IMDb movie reviews** (2000-2024) to construct a high-frequency sentiment index, empirically testing the **"Attention Distraction Hypothesis"** in financial markets.
+
 ## 🚀 Key Technical Features
 
 This codebase demonstrates the integration of **Computer Science best practices** into **Financial Economics research**:
@@ -49,3 +51,98 @@ The directory structure follows the **Cookiecutter Data Science** standard to en
 ├── LICENSE                # MIT License
 ├── README.md              # The top-level README for developers using this project
 └── requirements.txt       # The requirements file for reproducing the analysis environment
+
+```
+
+## 🛠️ Installation & Usage
+
+### Prerequisites
+
+* Python 3.9+
+* OpenAI API Key (Required for the sentiment quantification pipeline)
+
+### Setup Steps
+
+1. **Clone the repository:**
+```bash
+git clone [https://github.com/WLXie-Tony/Movie-Review-Sentiment-Quantification.git](https://github.com/WLXie-Tony/Movie-Review-Sentiment-Quantification.git)
+cd Movie-Review-Sentiment-Quantification
+
+```
+
+
+2. **Install dependencies:**
+```bash
+pip install -r requirements.txt
+
+```
+
+
+3. **Environment Configuration:**
+Create a `.env` file in the root directory to store your credentials securely. **Do not hardcode keys in scripts.**
+```text
+OPENAI_API_KEY=sk-proj-your_api_key_here
+
+```
+
+
+
+### Running the Pipeline
+
+**Step 1: Data Collection (Scraping)**
+To initiate the spider for retrieving movie metadata and raw reviews:
+
+```bash
+python src/scraping/03_imdb_movie_reviews_scraper.py
+
+```
+
+**Step 2: Sentiment Quantification (LLM Pipeline)**
+To run the asynchronous GPT-4o analysis pipeline on the raw data:
+
+```bash
+# This notebook demonstrates the core async ETL logic
+jupyter notebook notebooks/High_Frequency_Sentiment_Analysis_Pipeline.ipynb
+
+```
+
+## 📊 Methodology Highlight
+
+To rigorously quantify qualitative information, I modeled the sentiment extraction process as a probabilistic mapping function:
+
+$$ \mathcal{S}*i = f*{\theta}(T_i, \mathbf{X}_i \mid \mathcal{P}, \tau) $$
+
+Where:
+
+* : Unstructured review text.
+* : Vector of movie metadata (Budget, Box Office, Director).
+* : Structured output (Sentiment Scalar ).
+* : Temperature parameter (set to  for deterministic reproducibility).
+
+## 📜 Citation
+
+If you use this code or data in your research, please cite the associated paper:
+
+```bibtex
+@article{TianXieZhang2026,
+  title={Reading Between the Reels: An AI-Driven Approach to Analysing Movie Review Sentiment and Market Returns},
+  author={Tian, Haowen and Xie, Wenlan (Tony) and Zhang, Yanlei},
+  journal={International Journal of Finance \& Economics},
+  year={2026},
+  publisher={Wiley},
+  doi={10.1002/ijfe.70129}
+}
+
+```
+
+## 📧 Contact
+
+**Wenlan (Tony) Xie** M.A. in Economics, The University of Chicago
+
+Email: [wenlanx@uchicago.edu](mailto:wenlanx@uchicago.edu)
+
+Website: [www.wenlanxie.com](http://www.wenlanxie.com)
+
+```
+
+```
