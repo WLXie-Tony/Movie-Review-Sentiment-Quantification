@@ -137,7 +137,7 @@ If you use this code or data in your research, please cite the associated paper:
 
 ## 📧 Contact
 
-**Wenlan (Tony) Xie** M.A. in Economics, The University of Chicago
+**Wenlan (Tony) Xie** The University of Chicago
 
 Email: [wenlanx@uchicago.edu](mailto:wenlanx@uchicago.edu)
 
