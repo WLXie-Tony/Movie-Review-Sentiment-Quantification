@@ -49,8 +49,7 @@ The directory structure follows the **Cookiecutter Data Science** standard to en
 │   └── utils/             # Helper scripts (Token generation, Logger)
 ├── .gitignore             # Files to ignore (e.g., .env, local configs)
 ├── LICENSE                # MIT License
-├── README.md              # The top-level README for developers using this project
-└── requirements.txt       # The requirements file for reproducing the analysis environment
+└──  README.md              # The top-level README for developers using this project
 
 ```
 
