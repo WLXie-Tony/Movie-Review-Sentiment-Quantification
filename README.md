@@ -50,3 +50,20 @@ The directory structure follows the **Cookiecutter Data Science** standard to en
 ├── LICENSE                # MIT License
 ├── README.md              # The top-level README for developers using this project
 └── requirements.txt       # The requirements file for reproducing the analysis environment
+
+🛠️ Installation & UsagePrerequisitesPython 3.9+OpenAI API Key (for running the sentiment quantification pipeline)Setup StepsClone the repository:Bashgit clone [https://github.com/WLXie-Tony/Movie-Review-Sentiment-Quantification.git](https://github.com/WLXie-Tony/Movie-Review-Sentiment-Quantification.git)
+cd Movie-Review-Sentiment-Quantification
+Install dependencies:Bashpip install -r requirements.txt
+Environment Configuration:Create a .env file in the root directory to store your credentials securely:PlaintextOPENAI_API_KEY=your_api_key_here
+Running the PipelineStep 1: Data Collection (Scraping)To initiate the scraping process for movie metadata and reviews:Bashpython src/scraping/03_imdb_movie_reviews_scraper.py
+Step 2: Sentiment Quantification (LLM Pipeline)To run the asynchronous GPT-4o analysis on the raw data:Bash# This script uses the async pipeline defined in src/analysis/llm_pipeline.py
+jupyter notebook notebooks/High_Frequency_Sentiment_Analysis_Pipeline.ipynb
+📊 Methodology HighlightTo rigorously quantify qualitative information, we model the sentiment extraction process as a probabilistic mapping function:$$ \mathcal{S}i = f{\theta}(T_i, \mathbf{X}_i \mid \mathcal{P}, \tau) $$Where:$T_i$: Unstructured review text.$\mathbf{X}_i$: Vector of movie metadata (Budget, Box Office, Director).$\mathcal{S}_i$: Structured output (Sentiment Scalar $\in [1, 10]$).$\tau$: Temperature parameter (set to $0.2$ for deterministic reproducibility).📜 CitationIf you use this code or data in your research, please cite our paper:代码段@article{TianXieZhang2026,
+  title={Reading Between the Reels: An AI-Driven Approach to Analysing Movie Review Sentiment and Market Returns},
+  author={Tian, Haowen and Xie, Wenlan (Tony) and Zhang, Yanlei},
+  journal={International Journal of Finance \& Economics},
+  year={2026},
+  publisher={Wiley},
+  doi={10.1002/ijfe.70129}
+}
+📧 ContactWenlan (Tony) Xie M.A. in Economics, The University of ChicagoEmail: wenlanx@uchicago.eduWebsite: www.wenlanxie.com
