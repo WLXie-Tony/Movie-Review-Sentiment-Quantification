@@ -51,3 +51,8 @@ The directory structure follows the **Cookiecutter Data Science** standard to en
 ├── README.md              # The top-level README for developers using this project
 └── requirements.txt       # The requirements file for reproducing the analysis environment
 
+## 🛠️ Installation & Usage
+Prerequisites
+Python 3.9+
+
+OpenAI API Key (for running the sentiment quantification pipeline)
