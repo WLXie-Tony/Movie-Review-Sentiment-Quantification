@@ -50,35 +50,3 @@ The directory structure follows the **Cookiecutter Data Science** standard to en
 ├── LICENSE                # MIT License
 ├── README.md              # The top-level README for developers using this project
 └── requirements.txt       # The requirements file for reproducing the analysis environment
-
-### 🛠️ Installation & Usage
-
-### Prerequisites
-* Python 3.9+
-* OpenAI API Key (for running the sentiment quantification pipeline)
-
-### Setup Steps
-
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/WLXie-Tony/Movie-Review-Sentiment-Quantification.git](https://github.com/WLXie-Tony/Movie-Review-Sentiment-Quantification.git)
-    cd Movie-Review-Sentiment-Quantification
-    ```
-
-2.  **Install dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-3.  **Environment Configuration:**
-    Create a `.env` file in the root directory to store your credentials securely:
-    ```text
-    OPENAI_API_KEY=your_api_key_here
-    ```
-
-### Running the Pipeline
-
-**Step 1: Data Collection (Scraping)**
-To initiate the scraping process for movie metadata and reviews:
-```bash
-python src/scraping/03_imdb_movie_reviews_scraper.py
