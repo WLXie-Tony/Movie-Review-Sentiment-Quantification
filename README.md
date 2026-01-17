@@ -9,7 +9,7 @@
 
 **Developed by [Wenlan (Tony) Xie](http://www.wenlanxie.com)**, this repository constitutes the official replication package for the research paper:
 
-> **Tian, H., Xie, W. (Tony), & Zhang, Y. (2026).** *"Reading Between the Reels: An AI-Driven Approach to Analysing Movie Review Sentiment and Market Returns."* International Journal of Finance & Economics.
+> **Tian, H., Xie, W. (Tony), & Zhang, Y. (2026).** *"Reading Between the Reels: An AI-Driven Approach to Analysing Movie Review Sentiment and Market Returns."*(https://doi.org/10.1002/ijfe.70129) International Journal of Finance & Economics.
 
 This project implements a production-grade **Asynchronous ETL (Extract, Transform, Load) Pipeline** designed to quantify investor attention distractions using unstructured textual data. By leveraging Large Language Models (GPT-4o) with strict schema validation, **I processed** over **247,000 IMDb movie reviews** (2000-2024) to construct a high-frequency sentiment index, empirically testing the **"Attention Distraction Hypothesis"** in financial markets.
 
