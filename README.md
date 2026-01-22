@@ -34,21 +34,36 @@ This codebase demonstrates the integration of **Computer Science best practices*
 
 ## 📂 Repository Structure
 
-The directory structure follows the **Cookiecutter Data Science** standard to ensure reproducibility:
+This project follows a **modular architecture** designed for reproducibility, scalability, and separation of concerns. The directory structure is organized as follows:
 
 ```text
-├── config/                # Configuration files for scraper state and API settings
-├── data/
-│   ├── raw/               # Original immutable data (IMDb reviews, Metadata, URLs)
-│   └── processed/         # Cleaned data & LLM-generated sentiment scores
-├── notebooks/             # Jupyter notebooks for interactive analysis and visualization
-├── src/                   # Source code for use in this project
-│   ├── analysis/          # Async pipelines for LLM processing (GPT-4o)
-│   ├── scraping/          # Scripts to download data (Spiders)
-│   └── utils/             # Helper scripts (Token generation, Logger)
-├── .gitignore             # Files to ignore (e.g., .env, local configs)
-├── LICENSE                # MIT License
-└──  README.md             # The README for developers using this project
+├── config/                    # Global configuration files
+│   └── settings.yaml          # Centralized parameters for timeouts, headers, and paths
+│
+├── data/                      # Data storage (Git-ignored)
+│   ├── raw/                   # Immutable original corpus (Metadata, Reviews, URLs)
+│   └── processed/             # Canonical datasets enriched with sentiment scores
+│
+├── notebooks/                 # Jupyter notebooks for interactive analysis
+│   └── 01_sentiment_pipeline.ipynb  # Main pipeline for EDA and visualization
+│
+├── src/                       # Source code (Python Package)
+│   ├── acquisition/           # Data acquisition modules (Spiders & Scrapers)
+│   │   ├── 01_fetch_urls.py       # Retrieves movie URLs from IMDb
+│   │   ├── 02_extract_metadata.py # Extracts high-dimensional metadata (Box Office, Credits)
+│   │   └── 03_collect_reviews.py  # Collects user reviews via pagination
+│   │
+│   ├── utils/                 # Shared utility libraries
+│   │   ├── config_loader.py       # Singleton loader for YAML configurations
+│   │   ├── logger.py              # centralized logging configuration
+│   │   └── text_cleaner.py        # Regex-based text sanitization & normalization
+│   │
+│   └── __init__.py            # Package initialization
+│
+├── .gitignore                 # Version control exclusions
+├── LICENSE                    # MIT License
+├── README.md                  # Project documentation
+└── requirements.txt           # Python dependencies for environment replication
 
 ```
 
