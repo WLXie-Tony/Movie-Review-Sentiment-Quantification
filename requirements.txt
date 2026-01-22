@@ -1,0 +1,10 @@
+pandas
+selenium
+webdriver-manager
+httpx[http2]
+parsel
+tenacity
+pyyaml
+loguru
+openpyxl
+notebook
