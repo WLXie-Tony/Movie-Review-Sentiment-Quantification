@@ -7,7 +7,7 @@
 
 ## 📌 Overview
 
-**Developed by [Wenlan (Tony) Xie](http://www.wenlanxie.com)**, this repository constitutes the official replication package for the research paper:
+**Developed by [Wenlan (Tony) Xie]([http://www.wenlanxie.com](https://github.com/WLXie-Tony))**, this repository constitutes the official replication package for the research paper:
 
 > **Tian, H., Xie, W. (Tony), & Zhang, Y. (2026).** *"Reading Between the Reels: An AI-Driven Approach to Analysing Movie Review Sentiment and Market Returns."*(https://doi.org/10.1002/ijfe.70129) International Journal of Finance & Economics.
 
