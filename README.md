@@ -106,7 +106,7 @@ OPENAI_API_KEY=sk-proj-your_api_key_here
 To initiate the spider for retrieving movie metadata and raw reviews:
 
 ```bash
-python src/scraping/03_imdb_movie_reviews_scraper.py
+python src/scraping/03_collect_reviews.py
 
 ```
 
@@ -115,7 +115,7 @@ To run the asynchronous GPT-4o analysis pipeline on the raw data:
 
 ```bash
 # This notebook demonstrates the core async ETL logic
-jupyter notebook notebooks/High_Frequency_Sentiment_Analysis_Pipeline.ipynb
+jupyter notebook notebooks/01_sentiment_pipeline.ipynb
 
 ```
 
