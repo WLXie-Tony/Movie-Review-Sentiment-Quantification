@@ -15,22 +15,22 @@ This project implements a production-grade **Asynchronous ETL (Extract, Transfor
 
 ## 🚀 Key Technical Features
 
-This codebase demonstrates the integration of **Computer Science best practices** into **Financial Economics research**:
+This repository demonstrates the integration of **Software Engineering best practices** into **Financial Economics research**, prioritizing reproducibility, scalability, and data integrity.
 
-### 1. Robust Data Collection (`src/scraping/`)
-* **Architecture**: Modularized spider capable of traversing IMDb's complex DOM structure.
-* **Resilience**: Implements session token management and header rotation to handle anti-bot mechanisms.
-* **Scale**: Successfully aggregated metadata and user reviews for 4,344 trading days.
+### 1. Robust Data Acquisition (`src/acquisition/`)
+* **Modular Architecture**: The extraction logic is decoupled into distinct modules for **URL discovery** (`01_fetch_urls.py`), **metadata extraction** (`02_extract_metadata.py`), and **review mining** (`03_collect_reviews.py`), ensuring separation of concerns.
+* **Resilience & Idempotency**: Implements state-aware execution logic. The pipeline automatically detects existing progress in `data/raw/` to prevent redundant scraping and enable seamless resumption after interruptions.
+* **Production-Grade Stability**: Utilizes **`tenacity`** for exponential backoff retry strategies and **`httpx[http2]`** for high-performance, asynchronous-ready network requests, significantly reducing failure rates compared to traditional synchronous scrapers.
 
 ### 2. LLM-Based Sentiment Quantification (`src/analysis/`)
-* **Model**: OpenAI **GPT-4o** integration via `AsyncOpenAI`.
-* **Concurrency**: Utilizes `asyncio` and `Semaphore` to manage high-throughput API requests, achieving a **20x speedup** over synchronous execution.
-* **Data Integrity**: Enforces **`Pydantic`** schemas to guarantee structured JSON outputs (Sentiment Score 1-10, Emotion Vectors), eliminating parsing errors common in unstructured text analysis.
-* **Error Handling**: Implements exponential backoff strategies (`tenacity`) for robust API interaction.
+* **High-Throughput Inference**: Integrates **OpenAI GPT-4o** via `AsyncOpenAI`. By leveraging Python's `asyncio` and `Semaphore`, the pipeline achieves a **20x speedup** in processing thousands of reviews compared to sequential execution.
+* **Structured Data Enforcement**: Uses **Pydantic** models to strictly enforce output schemas (e.g., Sentiment Score $\in [1, 10]$). This eliminates parsing errors common in unstructured text analysis and ensures type safety across the data pipeline.
+* **Prompt Engineering**: Employs a rigorous system prompt designed to minimize hallucination and standardize sentiment scoring across diverse review lengths and writing styles.
 
-### 3. Reproducible Econometrics (`notebooks/`)
-* **Transparency**: Full code for constructing the sentiment index and running Time-Series regressions (Fama-French 5-Factor controls).
-* **Validation**: Implementation of alternative Deep Learning models (BERT, LSTM, CNN) for robustness checks.
+### 3. Engineering Best Practices (`src/utils/` & `config/`)
+* **Configuration as Code**: All scraping parameters (headers, timeouts) and file paths are centralized in `config/settings.yaml`, decoupling configuration from business logic.
+* **Centralized Logging**: Implements a robust `logging` system (via `src/utils/logger.py`) that captures detailed execution traces to both console and persistent log files for auditability.
+* **Defensive Programming**: Includes comprehensive type hinting (`typing`), thorough docstrings, and robust error handling to handle edge cases in unstructured web data (e.g., malformed HTML, missing metadata).
 
 ## 📂 Repository Structure
 
