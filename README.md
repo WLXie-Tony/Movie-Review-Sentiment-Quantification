@@ -106,7 +106,7 @@ OPENAI_API_KEY=sk-proj-your_api_key_here
 To initiate the spider for retrieving movie metadata and raw reviews:
 
 ```bash
-python src/scraping/03_collect_reviews.py
+python src/acquisition/03_collect_reviews.py
 
 ```
 
